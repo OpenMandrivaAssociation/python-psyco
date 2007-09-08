@@ -1,6 +1,6 @@
 %define name python-psyco
 %define version 1.5.2
-%define release %mkrel 2
+%define release %mkrel 3
 %define oname psyco
 
 Summary: Python Specializing Compiler
@@ -30,21 +30,22 @@ Summary: Programmer's documentation for Psyco
 Psyco is a Python extension module which can massively speed up the
 execution of any Python code.
 
-This package contains the developer's documentation for %name in HTML
+This package contains the developer's documentation for %{name} in HTML
 and PostScript formats.
 
 %prep
-%setup -q -n %oname-%version -a 1
+%setup -q -n %{oname}-%{version} -a 1
 
 %build
+export CFLAGS="%{optflags}"
 python setup.py build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT
+rm -rf %{buildroot}
+python setup.py install --root=%{buildroot} --optimize=2
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
