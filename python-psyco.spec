@@ -1,13 +1,13 @@
 %define name python-psyco
-%define version 1.5.2
-%define release %mkrel 3
+%define version 1.6
+%define release %mkrel 1
 %define oname psyco
 
 Summary: Python Specializing Compiler
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://prdownloads.sourceforge.net/%oname/%oname-%version-src.tar.bz2
+Source0: http://prdownloads.sourceforge.net/%oname/%oname-%version-src.tar.gz
 Source1: psyco-1.1.1-docs.tar.bz2
 License: MIT
 Group: Development/Python
