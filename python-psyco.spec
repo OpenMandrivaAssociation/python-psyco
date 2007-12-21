@@ -11,6 +11,7 @@ Source0: http://prdownloads.sourceforge.net/%oname/%oname-%version-src.tar.gz
 Source1: psyco-1.1.1-docs.tar.bz2
 License: MIT
 Group: Development/Python
+BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: libpython-devel
 Provides: psyco
 Obsoletes: psyco
