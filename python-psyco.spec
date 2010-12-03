@@ -1,6 +1,6 @@
 %define name python-psyco
 %define version 1.6
-%define release %mkrel 5
+%define release %mkrel 6
 %define oname psyco
 
 Summary: Python Specializing Compiler
