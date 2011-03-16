@@ -9,6 +9,7 @@ Version: %{version}
 Release: %{release}
 Source0: http://downloads.sourceforge.net/%oname/%oname-%version-src.tar.gz
 Source1: psyco-1.1.1-docs.tar.bz2
+Patch0:	python-psyco_python27.patch
 License: MIT
 Group: Development/Python
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -35,6 +36,7 @@ and PostScript formats.
 
 %prep
 %setup -q -n %{oname}-%{version} -a 1
+%patch0 -p0 
 
 %build
 export CFLAGS="%{optflags}"
