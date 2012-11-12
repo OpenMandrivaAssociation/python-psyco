@@ -1,0 +1,11 @@
+--- psyco-1.6/setup.py.linking	2011-03-18 21:12:45.000000000 +0100
++++ psyco-1.6/setup.py	2011-03-18 21:12:53.000000000 +0100
+@@ -121,7 +121,7 @@ else:
+     sources = [SOURCEDIR + '/' + s.filename for s in SRC]
+ 
+ extra_compile_args = []
+-extra_link_args = []
++extra_link_args = ['-lm']
+ if sys.platform == 'win32':
+     if globals().get('PSYCO_DEBUG'):
+         # how do we know if distutils will use the MS compilers ???
