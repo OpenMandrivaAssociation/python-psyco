@@ -1,32 +1,28 @@
-%define name python-psyco
-%define version 1.6
-%define release %mkrel 7
 %define oname psyco
 
-Summary: Python Specializing Compiler
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: http://downloads.sourceforge.net/%oname/%oname-%version-src.tar.gz
-Source1: psyco-1.1.1-docs.tar.bz2
-Patch0:	python-psyco_python27.patch
-Patch1: psyco-1.6-fix-linking.patch
-License: MIT
-Group: Development/Python
-BuildRoot: %{_tmppath}/%{name}-buildroot
-BuildRequires: libpython-devel
-Provides: psyco
-Obsoletes: psyco
-Url: http://psyco.sourceforge.net
-Exclusivearch: %ix86
+Summary:	Python Specializing Compiler
+Name:		python-%{oname}
+Version:	1.6
+Release:	8
+Source0:	http://downloads.sourceforge.net/%oname/%oname-%version-src.tar.gz
+Source1:	psyco-1.1.1-docs.tar.bz2
+Patch0:		python-psyco_python27.patch
+Patch1:		psyco-1.6-fix-linking.patch
+License:	MIT
+Group:		Development/Python
+BuildRequires:	python-devel
+Provides:	psyco = %{EVRD}
+Obsoletes:	psyco < %{EVRD}
+Url:		http://psyco.sourceforge.net
+Exclusivearch:	%ix86
 
 %description
 Psyco is a Python extension module which can massively speed up the
 execution of any Python code.
 
 %package docs
-Group: Development/Python
-Summary: Programmer's documentation for Psyco
+Group:		Development/Python
+Summary:	Programmer's documentation for Psyco
 
 %description docs
 Psyco is a Python extension module which can massively speed up the
@@ -45,19 +41,13 @@ export CFLAGS="%{optflags}"
 python setup.py build
 
 %install
-rm -rf %{buildroot}
 python setup.py install --root=%{buildroot} --optimize=2
 
-%clean
-rm -rf %{buildroot}
-
 %files 
-%defattr(-,root,root)
 %doc *.txt
 %py_platsitedir/*psyco*
 
 %files docs 
-%defattr(-,root,root)
 %doc Documentation/*
 
 
@@ -68,7 +58,7 @@ rm -rf %{buildroot}
 + Revision: 668022
 - mass rebuild
 
-* Fri Mar 18 2011 Götz Waschk <waschk@mandriva.org> 1.6-6
+* Fri Mar 18 2011 GÃ¶tz Waschk <waschk@mandriva.org> 1.6-6
 + Revision: 646481
 - fix linking
 
@@ -97,7 +87,7 @@ rm -rf %{buildroot}
   + Olivier Blin <oblin@mandriva.com>
     - restore BuildRoot
 
-* Sun Dec 16 2007 Götz Waschk <waschk@mandriva.org> 1.6-1mdv2008.1
+* Sun Dec 16 2007 GÃ¶tz Waschk <waschk@mandriva.org> 1.6-1mdv2008.1
 + Revision: 120729
 - new version
 
@@ -106,29 +96,29 @@ rm -rf %{buildroot}
 - rebuild with optflags
 
 
-* Tue Nov 28 2006 Götz Waschk <waschk@mandriva.org> 1.5.2-2mdv2007.0
+* Tue Nov 28 2006 GÃ¶tz Waschk <waschk@mandriva.org> 1.5.2-2mdv2007.0
 + Revision: 88165
 - update file list
 
-* Tue Nov 21 2006 Götz Waschk <waschk@mandriva.org> 1.5.2-1mdv2007.1
+* Tue Nov 21 2006 GÃ¶tz Waschk <waschk@mandriva.org> 1.5.2-1mdv2007.1
 + Revision: 85949
 - Import python-psyco
 
-* Tue Nov 21 2006 G�tz Waschk <waschk@mandriva.org> 1.5.2-1mdv2007.1
+* Tue Nov 21 2006 Götz Waschk <waschk@mandriva.org> 1.5.2-1mdv2007.1
 - new version
 
-* Fri Apr 28 2006 Götz Waschk <waschk@mandriva.org> 1.5.1-1mdk
+* Fri Apr 28 2006 GÃ¶tz Waschk <waschk@mandriva.org> 1.5.1-1mdk
 - New release 1.5.1
 - use mkrel
 
-* Sun Oct 30 2005 Götz Waschk <waschk@mandriva.org> 1.5-1mdk
+* Sun Oct 30 2005 GÃ¶tz Waschk <waschk@mandriva.org> 1.5-1mdk
 - New release 1.5
 
-* Fri Feb 18 2005 G�tz Waschk <waschk@linux-mandrake.com> 1.4-1mdk
+* Fri Feb 18 2005 Götz Waschk <waschk@linux-mandrake.com> 1.4-1mdk
 - provide and obsolete psyco
 - New release 1.4
 
-* Tue Dec 07 2004 G�tz Waschk <waschk@linux-mandrake.com> 1.3-2mdk
+* Tue Dec 07 2004 Götz Waschk <waschk@linux-mandrake.com> 1.3-2mdk
 - update description
 
 * Mon Dec 06 2004 Goetz Waschk <waschk@linux-mandrake.com> 1.3-1mdk
@@ -137,6 +127,6 @@ rm -rf %{buildroot}
 * Sat Dec 04 2004 Michael Scherer <misc@mandrake.org> 1.2-2mdk
 - Rebuild for new python
 
-* Thu Mar 04 2004 G�tz Waschk <waschk@linux-mandrake.com> 1.2-1mdk
+* Thu Mar 04 2004 Götz Waschk <waschk@linux-mandrake.com> 1.2-1mdk
 - new version
 
