@@ -3,7 +3,7 @@
 Summary:	Python Specializing Compiler
 Name:		python-%{oname}
 Version:	1.6
-Release:	11
+Release:	12
 License:	MIT
 Group:		Development/Python
 Url:		http://psyco.sourceforge.net
