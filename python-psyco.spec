@@ -3,7 +3,7 @@
 Summary:	Python Specializing Compiler
 Name:		python-%{oname}
 Version:	1.6
-Release:	8
+Release:	9
 Source0:	http://downloads.sourceforge.net/%oname/%oname-%version-src.tar.gz
 Source1:	psyco-1.1.1-docs.tar.bz2
 Patch0:		python-psyco_python27.patch
