@@ -11,7 +11,7 @@ Source0:	http://downloads.sourceforge.net/%{oname}/%{oname}-%{version}-src.tar.g
 Source1:	psyco-1.1.1-docs.tar.bz2
 Patch0:		python-psyco_python27.patch
 Patch1:		psyco-1.6-fix-linking.patch
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python2)
 Provides:	psyco = %{EVRD}
 Exclusivearch:	%ix86
 
@@ -36,14 +36,14 @@ and PostScript formats.
 
 %build
 export CFLAGS="%{optflags}"
-python setup.py build
+python2 setup.py build
 
 %install
-python setup.py install --root=%{buildroot} --optimize=2
+python2 setup.py install --root=%{buildroot} --optimize=2
 
 %files 
 %doc *.txt
-%{py_platsitedir}/*psyco*
+%{py2_platsitedir}/*psyco*
 
 %files docs 
 %doc Documentation/*
