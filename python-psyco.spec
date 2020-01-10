@@ -32,7 +32,7 @@ and PostScript formats.
 
 %prep
 %setup -qn %{oname}-%{version} -a 1
-%apply_patches
+%autopatch -p1
 
 %build
 export CFLAGS="%{optflags}"
