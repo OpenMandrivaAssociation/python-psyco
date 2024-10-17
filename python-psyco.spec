@@ -6,7 +6,7 @@ Version:	1.6
 Release:	17
 License:	MIT
 Group:		Development/Python
-Url:		http://psyco.sourceforge.net
+Url:		https://psyco.sourceforge.net
 Source0:	http://downloads.sourceforge.net/%{oname}/%{oname}-%{version}-src.tar.gz
 Source1:	psyco-1.1.1-docs.tar.bz2
 Patch0:		python-psyco_python27.patch
